@@ -1,0 +1,165 @@
+import React, { useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaExternalLinkAlt, FaInstagram } from "react-icons/fa";
+import Typewriter from "typewriter-effect";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { LuSparkles } from "react-icons/lu";
+
+const base = [
+  {
+    id: 1,
+    text: "React",
+  },
+  {
+    id: 2,
+    text: "JavaScript",
+  },
+  {
+    id: 3,
+    text: "NodeJs",
+  },
+  {
+    id: 4,
+    text: "Tailwind",
+  },
+];
+
+const linklar = [
+  {
+    id: 1,
+    icon: <FiGithub />,
+    link: "",
+  },
+  {
+    id: 2,
+    icon: <FiLinkedin />,
+    link: "",
+  },
+  {
+    id: 3,
+    icon: <FaInstagram />,
+    link: "",
+  },
+];
+const Asosiy = () => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <div id="asosiy" className="flex items-center justify-center">
+      <div className="container  w-full">
+        <div className="flex flex-col md:flex-row md:justify-between items-center gap-10">
+          {/* Chap qism--------------------------------------------------------------------------------- */}
+          <div className="flex flex-col items-center md:items-start text-left gap-6">
+            <p className="flex items-center text-sm text-blue-300 font-medium bg-black/40 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10">
+              <LuSparkles className="mr-2 text-blue-400" />
+              Ready to Innovate
+            </p>
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                Frontend
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+                Developer
+              </span>
+            </h1>
+            <div className="text-white">
+              <Typewriter
+                options={{
+                  strings: ["Gradient cursor!", "Yaxshi ko‘rinyapti 😎"],
+                  autoStart: true,
+                  loop: true,
+                  cursorClassName: "text-blue-500",
+                }}
+              />
+            </div>
+            <div className="flex gap-3">
+              {base.map((item) => (
+                <div key={item.id} className="bg-black/50 border-[1px] border-black/40 px-5 py-[5px] rounded-full text-white">
+                  {item.text}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-5">
+              <a
+                href="#portfolio"
+                className="flex w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-500 group font-bold text-white"
+              >
+                <div className="absolute left-0 top-0 h-full w-0 bg-blue-400/10 transition-all duration-500 group-hover:w-full group-hover:translate-x-0 translate-x-[-100%]"></div>{" "}
+                Projects
+                <FaExternalLinkAlt
+                  size={15}
+                  className="group-hover:rotate-45 duration-500"
+                />
+              </a>
+              <a
+                href="#portfolio"
+                className="flex w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-500 group font-bold text-white"
+              >
+                <div className="absolute left-0 top-0 h-full w-0 bg-blue-400/10 transition-all duration-500 group-hover:w-full group-hover:translate-x-0 translate-x-[-100%]"></div>{" "}
+                Projects
+                <MdOutlineMailOutline
+                  size={19}
+                  className="group-hover:rotate- duration-500"
+                />
+              </a>
+            </div>
+
+            <div className="flex gap-5">
+              {linklar.map((item) => (
+                <div key={item.id} className="bg-black/80 p-2">
+                  <div className="text-white text-3xl">{item.icon}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* O'ng qism (DotLottie) --------------------------------------------------------------------------*/}
+          <div
+            className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl flex justify-center items-center"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            {/* Tashqi fon blur effekt */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
+                isHovering ? "opacity-50 scale-110" : "opacity-20 scale-100"
+              }`}
+            ></div>
+
+            {/* DotLottie komponenti--------------------------------------------------------------------------------- */}
+            <div
+              className={`relative z-10 w-full transform transition-transform duration-500 ${
+                isHovering ? "scale-160 rotate-2" : "scale-150"
+              }`}
+            >
+              <DotLottieReact
+                src="https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie"
+                loop
+                autoplay
+                className="w-full h-auto"
+              />
+            </div>
+
+            {/* Ichki blur puls effekt */}
+            <div
+              className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
+                isHovering ? "opacity-50" : "opacity-20"
+              }`}
+            >
+              <div
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
+                  isHovering ? "scale-110" : "scale-100"
+                }`}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Asosiy;

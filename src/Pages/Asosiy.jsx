@@ -50,13 +50,13 @@ const Asosiy = () => {
       <div className="container  w-full">
         <div className="flex flex-col md:flex-row md:justify-between items-center gap-10">
           {/* Chap qism--------------------------------------------------------------------------------- */}
-          <div className="flex flex-col items-center md:items-start text-left gap-6">
-            <p className="flex items-center text-sm text-blue-300 font-medium bg-black/40 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10">
+          <div className="md:pl-10 z-50 flex flex-col items-center md:items-start text-left gap-5">
+            <p className="md:flex hidden items-center text-sm text-blue-300 font-medium bg-black/5 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10">
               <LuSparkles className="mr-2 text-blue-400" />
               Ready to Innovate
             </p>
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl lg:text-6xl font-bold text-center md:text-left">
+              <span className="bg-gradient-to-r text-3xl md:text-6xl from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
                 Frontend
               </span>
               <br />
@@ -67,16 +67,19 @@ const Asosiy = () => {
             <div className="text-white">
               <Typewriter
                 options={{
-                  strings: ["Gradient cursor!", "Yaxshi ko‘rinyapti 😎"],
+                  strings: ["Yuqori natijalar", "Va hkz"],
                   autoStart: true,
                   loop: true,
                   cursorClassName: "text-blue-500",
                 }}
               />
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-1 md:gap-3">
               {base.map((item) => (
-                <div key={item.id} className="bg-black/50 border-[1px] border-black/40 px-5 py-[5px] rounded-full text-white">
+                <div
+                  key={item.id}
+                  className="bg-black/50 border-[1px] border-black/40 px-[10px] md:px-5 py-[3px] md:py-[5px] rounded-full text-white"
+                >
                   {item.text}
                 </div>
               ))}
@@ -85,7 +88,7 @@ const Asosiy = () => {
             <div className="flex gap-5">
               <a
                 href="#portfolio"
-                className="flex w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-500 group font-bold text-white"
+                className="shadow-[0_0_25px_#935AF590] hover:shadow-[0_0_25px_#935AF5]  flex w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-1000 group font-bold text-white"
               >
                 <div className="absolute left-0 top-0 h-full w-0 bg-blue-400/10 transition-all duration-500 group-hover:w-full group-hover:translate-x-0 translate-x-[-100%]"></div>{" "}
                 Projects
@@ -96,21 +99,24 @@ const Asosiy = () => {
               </a>
               <a
                 href="#portfolio"
-                className="flex w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-500 group font-bold text-white"
+                className="  shadow-[0_0_25px_#935AF590] hover:shadow-[0_0_25px_#935AF5]  flex  w-38 h-11 relative overflow-hidden justify-center rounded-xl bg-black/40 items-center gap-2 hover:gap-4 duration-1000 group font-bold text-white"
               >
                 <div className="absolute left-0 top-0 h-full w-0 bg-blue-400/10 transition-all duration-500 group-hover:w-full group-hover:translate-x-0 translate-x-[-100%]"></div>{" "}
                 Projects
                 <MdOutlineMailOutline
                   size={19}
-                  className="group-hover:rotate- duration-500"
+                  className="group-hover:rotate-10 duration-500"
                 />
               </a>
             </div>
 
-            <div className="flex gap-5">
+            <div className="flex gap-9 mt-3">
               {linklar.map((item) => (
-                <div key={item.id} className="bg-black/80 p-2">
-                  <div className="text-white text-3xl">{item.icon}</div>
+                <div
+                  key={item.id}
+                  className="bg-[#1D163B] hover:bg-[#322c4b] rounded-xl border-[1px] border-white/20 p-[6px] shadow-[0_0_30px_#935AF590] hover:shadow-[0_0_30px_#935AF5] duration-500"
+                >
+                  <div className="text-white text-2xl">{item.icon}</div>
                 </div>
               ))}
             </div>
